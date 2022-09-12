@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CF620D2E | Wilson&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="由于一条路径可以包含一条边多次，所以如果$a$能经历$k$条边到达$b$，那就可以经过$k+2n$条边到达$b$，只需要在路径中随便找一条边不停折返即可。于是考虑对树黑白染色，（注意结论，即树是二分图，从而可以dfs染成黑白两色，方便考虑）。">
+  
+  
+    <link rel="alternate" href="../atom.xml" title="Wilson's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  
+    <link rel="stylesheet" href="../fancybox/jquery.fancybox-1.3.4.css">
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="nav-outer">
+  <nav id="main-nav" class="outer">
+    <a id="main-nav-toggle" class="nav-icon"></a>
+    
+      <a class="main-nav-link" href="../index.html">Home</a>
+    
+      <a class="main-nav-link" href="../archives">Archives</a>
+    
+      <a class="main-nav-link" href="../about">About</a>
+    
+    <div class="main-nav-space-between"></div>
+    
+      <a id="nav-rss-link" class="nav-icon" href="../atom.xml" title="RSS 订阅"></a>
+    
+  </nav>
+</div>
+<div id="header-title">
+  <h1 id="logo-wrap">
+    <a href="../index.html" id="logo">Wilson&#39;s blog</a>
+  </h1>
+  
+</div>
+
+      <div id="content" class="outer">
+        <section id="main"><article id="post-CF620D2E" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2020-04-29T01:44:42.000Z" itemprop="datePublished">2020-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../categories/%E9%A2%98%E8%A7%A3/">题解</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CF620D2E
+    </h1>
+  
+
+      </header>
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>由于一条路径可以包含一条边多次<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以如果<span class="markdown-them-math-inline">$a$</span>能经历<span class="markdown-them-math-inline">$k$</span>条边到达<span class="markdown-them-math-inline">$b$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那就可以经过<span class="markdown-them-math-inline">$k+2n$</span>条边到达<span class="markdown-them-math-inline">$b$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>只需要在路径中随便找一条边不停折返即可<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>于是考虑对树黑白染色<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>注意结论<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>即<strong>树是二分图</strong><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>从而可以dfs染成黑白两色<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>方便考虑<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<span id="more"></span>
+<p>那么从每个结点出发<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>用奇数步可以到达所有异色的结点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>用偶数步可以到达所有同色的结点<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>这里是指<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>只要步数取遍所有奇数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>就可以到达所有异色的结点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>偶数同理<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>从而对每次询问<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>只需判断<span class="markdown-them-math-inline">$a,b$</span>是否同色<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>就能知道<span class="markdown-them-math-inline">$a,b$</span>之间的任意一条路径长度是奇数还是偶数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>然后直接与<span class="markdown-them-math-inline">$k$</span>比较即可得知有没有可能花<span class="markdown-them-math-inline">$k$</span>步到达<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>如果要算上<span class="markdown-them-math-inline">$x,y$</span>的影响<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>不难想到当且仅当<span class="markdown-them-math-inline">$x,y$</span>同色时才会对奇偶性产生影响<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>当<span class="markdown-them-math-inline">$x,y$</span>同色时<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>从任意节点出发<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>可以用奇数步到达任意节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>也可以用偶数步到达任意节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>但是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这题必须要考虑<span class="markdown-them-math-inline">$k$</span>是否大于<span class="markdown-them-math-inline">$a,b$</span>间的最短距离<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>要求得<span class="markdown-them-math-inline">$a,b$</span>间的最短距离<span class="markdown-them-math-inline">$d(a,b)$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>不难想到<span class="markdown-them-math-inline">$a$</span>应当先行进到它们的最近公共祖先<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>Least Common Ancestors, LCA<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span><span class="markdown-them-math-inline">$LCA(a,b)$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>再行进到<span class="markdown-them-math-inline">$b$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>即使没有接触过求最近公共祖先的算法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>也应当能够想到这一步<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这样显然有<span class="markdown-them-math-inline">$d(a,b)=(deep[a]-deep[LCA(a,b)]) + (deep[b] - deep[LCA(a,b)])$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>然后可以使用各种求最近公共祖先的算法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>应该都可以过<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>我使用的是tarjan算法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h3 id="ac代码">AC代码</h3>
+<div class="highlight"><pre class="code"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> maxn 100005</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tarjan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> num)</span></span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">query</span> &#123;</span>
+    <span class="hljs-keyword">int</span> to, num;
+    <span class="hljs-built_in">query</span>(<span class="hljs-keyword">int</span> _to, <span class="hljs-keyword">int</span> _num) &#123;
+        <span class="hljs-keyword">this</span>-&gt;to = _to;
+        <span class="hljs-keyword">this</span>-&gt;num = _num;
+    &#125;
+    <span class="hljs-comment">//num: index in Q[]</span>
+&#125;;
+vector&lt;query&gt; Gq[maxn];<span class="hljs-comment">//每个顶点的请求列表 </span>
+vector&lt;<span class="hljs-keyword">int</span>&gt; G[maxn];<span class="hljs-comment">//原图 </span>
+<span class="hljs-keyword">int</span> Q[<span class="hljs-number">5</span> * maxn];
+<span class="hljs-comment">//Q[5 * i]: ab[i]</span>
+<span class="hljs-comment">//Q[5 * i + 1]: xa[i]</span>
+<span class="hljs-comment">//Q[5 * i + 2]: yb[i]</span>
+<span class="hljs-comment">//Q[5 * i + 3]: xb[i]</span>
+<span class="hljs-comment">//Q[5 * i + 4]: ya[i]</span>
+<span class="hljs-keyword">int</span> deep[maxn];
+<span class="hljs-keyword">int</span> k[maxn];
+<span class="hljs-keyword">int</span> fa[maxn];
+<span class="hljs-keyword">bool</span> vis[maxn];
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);
+    cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);
+    cin.<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-number">0</span>);
+    <span class="hljs-keyword">int</span> n, u, v;
+    cin &gt;&gt; n;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;
+        cin &gt;&gt; u &gt;&gt; v;
+        G[u].<span class="hljs-built_in">push_back</span>(v);
+        G[v].<span class="hljs-built_in">push_back</span>(u);
+        fa[i] = i;
+    &#125;
+    fa[n] = n;
+    <span class="hljs-keyword">int</span> q, x, y, a, b;
+    cin &gt;&gt; q;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; q; i++) &#123;
+        cin &gt;&gt; x &gt;&gt; y &gt;&gt; a &gt;&gt; b &gt;&gt; (k[i]);
+        <span class="hljs-built_in">add_query</span>(a, b, <span class="hljs-number">5</span> * i);
+        <span class="hljs-built_in">add_query</span>(x, a, <span class="hljs-number">5</span> * i + <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">add_query</span>(y, b, <span class="hljs-number">5</span> * i + <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">add_query</span>(x, b, <span class="hljs-number">5</span> * i + <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">add_query</span>(y, a, <span class="hljs-number">5</span> * i + <span class="hljs-number">4</span>);
+    &#125;
+    <span class="hljs-built_in">tarjan</span>(<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">bool</span> ok;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; q; i++) &#123;
+        ok = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">int</span> ab = Q[<span class="hljs-number">5</span> * i], xa = Q[<span class="hljs-number">5</span> * i + <span class="hljs-number">1</span>], yb = Q[<span class="hljs-number">5</span> * i + <span class="hljs-number">2</span>], xb = Q[<span class="hljs-number">5</span> * i + <span class="hljs-number">3</span>], ya = Q[<span class="hljs-number">5</span> * i + <span class="hljs-number">4</span>];
+        <span class="hljs-keyword">if</span>(((k[i] + ab) &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span> &amp;&amp; k[i] &gt;= ab) &#123;
+            ok = <span class="hljs-literal">true</span>;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(((k[i] + xa + yb + <span class="hljs-number">1</span>) &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span> &amp;&amp; k[i] &gt;= xa + yb + <span class="hljs-number">1</span>) &#123;
+            ok = <span class="hljs-literal">true</span>;
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(((k[i] + xb + ya + <span class="hljs-number">1</span>) &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span> &amp;&amp; k[i] &gt;= xb + ya + <span class="hljs-number">1</span>) &#123;
+            ok = <span class="hljs-literal">true</span>;
+        &#125;
+        cout &lt;&lt; (ok ? <span class="hljs-string">&quot;YES&quot;</span> : <span class="hljs-string">&quot;NO&quot;</span>) &lt;&lt; endl;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tarjan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;
+    vis[u] = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; G[u].<span class="hljs-built_in">size</span>(); i++) &#123;
+        <span class="hljs-keyword">if</span>(vis[G[u][i]]) <span class="hljs-keyword">continue</span>;
+        deep[G[u][i]] = deep[u] + <span class="hljs-number">1</span>;
+        <span class="hljs-built_in">tarjan</span>(G[u][i]);
+        <span class="hljs-built_in">merge</span>(G[u][i], u);
+        <span class="hljs-comment">//注意u和G[u][i]的顺序&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt; 参见函数实现处注释 </span>
+    &#125;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; Gq[u].<span class="hljs-built_in">size</span>(); i++) &#123;
+        <span class="hljs-keyword">if</span>(!vis[Gq[u][i].to]) <span class="hljs-keyword">continue</span>;
+        Q[Gq[u][i].num] = deep[u] + deep[Gq[u][i].to] - <span class="hljs-number">2</span> * deep[ <span class="hljs-built_in">find</span>(Gq[u][i].to) ];
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> num)</span> </span>&#123;
+    Gq[x].<span class="hljs-built_in">push_back</span>(<span class="hljs-built_in">query</span>(y, num));
+    Gq[y].<span class="hljs-built_in">push_back</span>(<span class="hljs-built_in">query</span>(x, num));
+&#125;
+<span class="hljs-comment">//并查集 </span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>&#123;
+    fa[<span class="hljs-built_in">find</span>(u)] = <span class="hljs-built_in">find</span>(v);
+    <span class="hljs-comment">//注意&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;一定要把深度小的结点并到深度大的节点下&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;否则会出错 </span>
+    <span class="hljs-comment">//我这里是在调用的时候保证了这一点&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;也可以选择在实现的时候判断一下 </span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;
+    <span class="hljs-keyword">return</span> (fa[u] == u ? u : fa[u] = <span class="hljs-built_in">find</span>(fa[u]));
+&#125;
+</code></pre></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/tarjan%E7%AE%97%E6%B3%95/" rel="tag">tarjan算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" rel="tag">最近公共祖先</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../CF630D2F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CF630D2F
+        
+      </div>
+    </a>
+  
+  
+    <a href="../Dinic%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Dinic算法
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2022 Wilson Xia<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a><br>
+<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">陕ICP备2021014297号</a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="../js/clipboard.min.js"></script>
+<script src="../js/jquery-1.4.3.min.js"></script>
+
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    options: {
+      enableMenu: false
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    }
+  };
+</script>
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    CommonHTML: {
+      linebreaks: false
+    }
+  });
+  </script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="../mathjax/tex-chtml.js">
+</script>
+<!-- <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+
+
+
+  </div>
+</body>
+</html>

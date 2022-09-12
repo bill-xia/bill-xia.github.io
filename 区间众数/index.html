@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>区间众数 | Wilson&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="通用求众数离线做法：离散化之后，开线段树维护数出现的频率的最大值，带单点修改，然后再用莫队，移动区间时就跑一个单点修改，复杂度是$O(n\sqrt{n}\log n)$。
+当只需要找频数超过一半的区间众数的时候，可以这样考虑：众数频数如果超过区间长度的一半，那么任意划分区间为两段，它必然要么在左半边">
+  
+  
+    <link rel="alternate" href="../atom.xml" title="Wilson's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  
+    <link rel="stylesheet" href="../fancybox/jquery.fancybox-1.3.4.css">
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="nav-outer">
+  <nav id="main-nav" class="outer">
+    <a id="main-nav-toggle" class="nav-icon"></a>
+    
+      <a class="main-nav-link" href="../index.html">Home</a>
+    
+      <a class="main-nav-link" href="../archives">Archives</a>
+    
+      <a class="main-nav-link" href="../about">About</a>
+    
+    <div class="main-nav-space-between"></div>
+    
+      <a id="nav-rss-link" class="nav-icon" href="../atom.xml" title="RSS 订阅"></a>
+    
+  </nav>
+</div>
+<div id="header-title">
+  <h1 id="logo-wrap">
+    <a href="../index.html" id="logo">Wilson&#39;s blog</a>
+  </h1>
+  
+</div>
+
+      <div id="content" class="outer">
+        <section id="main"><article id="post-区间众数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2021-04-20T05:20:43.094Z" itemprop="datePublished">2021-04-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      区间众数
+    </h1>
+  
+
+      </header>
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>通用求众数离线做法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>离散化之后<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>开线段树维护数出现的频率的最大值<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>带单点修改<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>然后再用莫队<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>移动区间时就跑一个单点修改<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>复杂度是<span class="markdown-them-math-inline">$O(n\sqrt{n}\log n)$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>当只需要找频数超过一半的区间众数的时候<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>可以这样考虑<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>众数频数如果超过区间长度的一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那么任意划分区间为两段<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>它必然要么在左半边超过一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>要么在右边超过一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>然后就可以用线段树维护了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>具体来说<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>每个结点维护当前区间的众数及其频数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>当合并时<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>找左儿子和右儿子的众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>如果众数频数超过一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那么众数一定是二者之一<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>离散化后对每个数开一个<code>pos</code>数组维护出现位置<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>在这个数组中二分得到这两者<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>左右儿子的众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>在当前区间中出现的频数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>取最大者即可<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这样维护出来不一定是真区间众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但是如果众数超过区间长度一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那他一定维护这个众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这个复杂度是每次查询<span class="markdown-them-math-inline">$O(\log^2n)$</span>的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>上面的论述中<span class="bd-box"><h-char class="bd bd-end"><h-inner>“</h-inner></h-char></span>一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>”</h-inner></h-char></span>大概也可以改为其他比例<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这带来的问题是满足其他比例的众数可能有多个<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而这个比例超过一半时可以保证这样的众数唯一<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>还有一种做法是随机化<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>在待查询区间里找30个数作为候选众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>对每个数检查它是否满足频数超过区间长度一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>用上段的方法可以做到<span class="markdown-them-math-inline">$O(\log n)$</span>查询<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>如果一个数频数超过区间长度一半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那么在区间内任取30个数<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>带放回<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>找不到该众数的概率不超过<span class="markdown-them-math-inline">$2^{-30}$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这个做法完全可以扩展到其他比例<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>比例变小时只需提高30这个常数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>例如要求众数频数超过<span class="markdown-them-math-inline">$1/5$</span>时可以取100个候选众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>即可做到<span class="markdown-them-math-inline">$({4\over 5})^{100}\approx2\times10^{-10}$</span>概率<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这是选不到真众数的概率<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为超过1/5的众数可能有多个<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>似乎有点迷惑<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>选不到假众数的概率也是一样的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>他们互不影响<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>但是没关系<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>由于候选众数中几乎必有真众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>即使找到了假众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>还需要和真众数比频数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以这种算法几乎必然找到真众数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>CF716Div2 D   AC代码<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<div class="highlight"><pre class="code"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 300000</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; pii;
+<span class="hljs-keyword">int</span> n, m, maxn, a[N + <span class="hljs-number">5</span>];
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span>
+    <span class="hljs-keyword">int</span> l, r, mx, aa;
+&#125;;
+node xds[<span class="hljs-number">4</span> * N+<span class="hljs-number">5</span>];
+vector&lt;<span class="hljs-keyword">int</span>&gt; pos[N+<span class="hljs-number">5</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cnt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;
+    <span class="hljs-keyword">int</span> ret = <span class="hljs-built_in">upper_bound</span>(pos[x].<span class="hljs-built_in">begin</span>(), pos[x].<span class="hljs-built_in">end</span>(), r) - <span class="hljs-built_in">lower_bound</span>(pos[x].<span class="hljs-built_in">begin</span>(), pos[x].<span class="hljs-built_in">end</span>(), l);
+    <span class="hljs-keyword">return</span> ret;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;
+    <span class="hljs-keyword">if</span>(l == r) &#123;
+        xds[id].l = xds[id].r = l;
+        xds[id].mx = <span class="hljs-number">1</span>;
+        xds[id].aa = a[l];
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">int</span> mid = (l + r) &gt;&gt; <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">build</span>(id * <span class="hljs-number">2</span>, l, mid);
+    <span class="hljs-built_in">build</span>(id * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>, mid + <span class="hljs-number">1</span>, r);
+    xds[id].l = l; xds[id].r = r;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">cnt</span>(xds[id * <span class="hljs-number">2</span>].aa, l, r) &gt; <span class="hljs-built_in">cnt</span>(xds[id * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>].aa, l, r)) &#123;
+        xds[id].mx = <span class="hljs-built_in">cnt</span>(xds[id * <span class="hljs-number">2</span>].aa, l, r);
+        xds[id].aa=  xds[id * <span class="hljs-number">2</span>].aa;
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        xds[id].mx = <span class="hljs-built_in">cnt</span>(xds[id * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>].aa, l, r);
+        xds[id].aa=  xds[id * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>].aa;
+    &#125;
+&#125;
+
+<span class="hljs-function">pii <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;
+    <span class="hljs-comment">// (frequency, value)</span>
+    pii ret, ret2;
+    <span class="hljs-keyword">int</span> f1 = <span class="hljs-number">0</span>, f2 = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (l &lt;= xds[id].l &amp;&amp; xds[id].r &lt;= r) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">pii</span>(xds[id].mx, xds[id].aa);
+    &#125;
+    <span class="hljs-keyword">int</span> mid = (xds[id].l + xds[id].r) &gt;&gt; <span class="hljs-number">1</span>, rl = <span class="hljs-built_in">max</span>(l, xds[id].l), rr = <span class="hljs-built_in">min</span>(r, xds[id].r);
+    <span class="hljs-keyword">if</span> (l &lt;= mid) &#123;
+        ret = <span class="hljs-built_in">get</span>(id * <span class="hljs-number">2</span>, l, r);
+        f1 = <span class="hljs-built_in">cnt</span>(ret.second, rl, rr);
+    &#125;
+    <span class="hljs-keyword">if</span> (r &gt; mid) &#123;
+        ret2 =  <span class="hljs-built_in">get</span>(id * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>, l, r);
+        f2 = <span class="hljs-built_in">cnt</span>(ret2.second, rl, rr);
+    &#125;
+    <span class="hljs-keyword">if</span> (f1 &gt; f2) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">pii</span>(f1, ret.second);
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">pii</span>(f2, ret2.second);
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> l, r;
+    cin.<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-number">0</span>);
+    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);
+    cin &gt;&gt; n &gt;&gt; m;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;
+        cin &gt;&gt; a[i];
+        pos[a[i]].<span class="hljs-built_in">push_back</span>(i);
+    &#125;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;
+        pos[i].<span class="hljs-built_in">push_back</span>(n + <span class="hljs-number">1</span>);
+    &#125;
+    <span class="hljs-built_in">build</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, n);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;
+        cin &gt;&gt; l &gt;&gt; r;
+        pii most = <span class="hljs-built_in">get</span>(<span class="hljs-number">1</span>, l, r);
+        cout &lt;&lt; <span class="hljs-built_in">max</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span> * most.first - (r - l + <span class="hljs-number">1</span>)) &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../CF708D2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CF708D2
+        
+      </div>
+    </a>
+  
+  
+    <a href="../%E7%AD%9B%E9%80%89%E6%B3%95%E5%BB%BA%E5%A0%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          筛选法建堆
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2022 Wilson Xia<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a><br>
+<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">陕ICP备2021014297号</a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="../js/clipboard.min.js"></script>
+<script src="../js/jquery-1.4.3.min.js"></script>
+
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    options: {
+      enableMenu: false
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    }
+  };
+</script>
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    CommonHTML: {
+      linebreaks: false
+    }
+  });
+  </script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="../mathjax/tex-chtml.js">
+</script>
+<!-- <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CF630D2F | Wilson&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="将每个独立集$V$考虑为原图中被染色的一些顶点，而在原图中加边后$E&#39;$可以得到一个子图$G&#39;$，这个子图如果满足一些条件，$V$就是$E&#39;$生成的子图$G&#39;$中的一个独立集。这些条件为：
+
+一条边的两端不同时被染色（或$V$中任意两点间没有边）
+没有孤立顶点被染色（$V$中的每个点都应当与$E&#39;$中的一条边相连）
+">
+  
+  
+    <link rel="alternate" href="../atom.xml" title="Wilson's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  
+    <link rel="stylesheet" href="../fancybox/jquery.fancybox-1.3.4.css">
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="nav-outer">
+  <nav id="main-nav" class="outer">
+    <a id="main-nav-toggle" class="nav-icon"></a>
+    
+      <a class="main-nav-link" href="../index.html">Home</a>
+    
+      <a class="main-nav-link" href="../archives">Archives</a>
+    
+      <a class="main-nav-link" href="../about">About</a>
+    
+    <div class="main-nav-space-between"></div>
+    
+      <a id="nav-rss-link" class="nav-icon" href="../atom.xml" title="RSS 订阅"></a>
+    
+  </nav>
+</div>
+<div id="header-title">
+  <h1 id="logo-wrap">
+    <a href="../index.html" id="logo">Wilson&#39;s blog</a>
+  </h1>
+  
+</div>
+
+      <div id="content" class="outer">
+        <section id="main"><article id="post-CF630D2F" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2020-05-08T01:55:40.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../categories/%E9%A2%98%E8%A7%A3/">题解</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CF630D2F
+    </h1>
+  
+
+      </header>
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>将每个独立集<span class="markdown-them-math-inline">$V$</span>考虑为原图中被染色的一些顶点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而在原图中加边后<span class="markdown-them-math-inline">$E'$</span>可以得到一个子图<span class="markdown-them-math-inline">$G'$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这个子图如果满足一些条件<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$V$</span>就是<span class="markdown-them-math-inline">$E'$</span>生成的子图<span class="markdown-them-math-inline">$G'$</span>中的一个独立集<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这些条件为<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<ol>
+<li>一条边的两端不同时被染色<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>或<span class="markdown-them-math-inline">$V$</span>中任意两点间没有边<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></li>
+<li>没有孤立顶点被染色<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span><span class="markdown-them-math-inline">$V$</span>中的每个点都应当与<span class="markdown-them-math-inline">$E'$</span>中的一条边相连<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span></li>
+</ol>
+<span id="more"></span>
+<p>这样问题就转化为了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>对每个点集<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>得出可行的<em>加边方案</em>数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>这种操作可以由子图转移到大图上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>可以由树形DP来完成<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>定义状态<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<ul>
+<li>
+<p>dp[u][0]: 以u为根的子树<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>看作一个图<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$u\notin V$</span>的情况总数</p>
+</li>
+<li>
+<p>dp[u][1]: 以u为根的子树上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$u\in V$</span>的情况总数</p>
+</li>
+<li>
+<p>dp[u][2]: 以u为根的子树上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>u染色且不与任一儿子连边的情况</p>
+</li>
+</ul>
+<p>上面的&quot;情况&quot;都指除u外所有点都不孤立的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>dp[u][2]是指<span class="markdown-them-math-inline">$u$</span>为被染色的孤立点的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>下面考虑转移方程<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>假设对<span class="markdown-them-math-inline">$u$</span>的每个儿子<span class="markdown-them-math-inline">$v$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>都已知dp[v][0]<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>dp[v][1]<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>dp[v][2]<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>那么</p>
+<ul>
+<li><span class="markdown-them-math-inline">$dp[u][0]=\Pi_{v}(2dp[v][0]+2dp[v][1]-dp[v][2])$</span></li>
+<li><span class="markdown-them-math-inline">$dp[u][1]=\Pi_{v}(2dp[v][0]+dp[v][1]-dp[v][2])$</span></li>
+<li><span class="markdown-them-math-inline">$dp[u][2]=\Pi_{v}(dp[v][0]+dp[v][1]-dp[v][2])$</span></li>
+</ul>
+<p>第一个方程的意思是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>对每个儿子v中合法<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>除v外全不孤立<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>的每种情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>可以选择v与u连接和不与u连接<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>会得到两种不同的子图<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>并且它们都合法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>情况总数为<span class="markdown-them-math-inline">$2dp[v][0]+2dp[v][1]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>除了v孤立并被染色且不与u连接<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>在以v为根的子树中<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这种情况总数为<span class="markdown-them-math-inline">$dp[v][2]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>第二个方程的意思是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>对每个儿子v<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>由于u被染色<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>从而v不被染色的情况可以选择与u连接和不与u连接<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>总数为<span class="markdown-them-math-inline">$2dp[v][0]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而v被染色的情况只能选择不与u连接<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>总数为<span class="markdown-them-math-inline">$dp[v][1]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但v被染色且不与u连接的情况可能包含v孤立的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>从而需要减去<span class="markdown-them-math-inline">$dp[v][2]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>第三个方程的意思是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>u被染色且每个儿子v都不与u连边<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>从而<span class="markdown-them-math-inline">$dp[v][0]$</span>和<span class="markdown-them-math-inline">$dp[v][1]$</span>都只能做1次贡献<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为他们不能选择是否与u连接<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>v仍然不能孤立<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以需要减去<span class="markdown-them-math-inline">$dp[v][2]$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>现在考虑边界情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>一个是叶子节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>一个是根节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>对叶子节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>直接考虑意义即可得知dp[u][0]=dp[u][1]=dp[u][2]=1<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>对根节点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>总情况个数为<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<p>dp[u][0]+dp[u][1]-dp[u][2]-1</p>
+<p>这个式子的意思是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>选u和不选u均可<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>选u就要去掉u孤立的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>即dp[u][2]<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>不选u就要去掉空集<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>是指无边<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而非无染色顶点<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>无染色顶点在很多子图中都是一个独立集<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>的情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为题目禁止<span class="markdown-them-math-inline">$E=\varnothing$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h3 id="ac代码">AC代码</h3>
+<div class="highlight"><pre class="code"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> maxn 300005</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MOD 998244353LL</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;
+ll dp[maxn][<span class="hljs-number">3</span>];
+vector&lt;<span class="hljs-keyword">int</span>&gt; G[maxn];
+<span class="hljs-keyword">bool</span> vis[maxn];
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+	<span class="hljs-keyword">int</span> n;
+	cin.<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-number">0</span>);
+	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);
+	cin &gt;&gt; n;
+	<span class="hljs-keyword">int</span> a, b;
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;
+		cin &gt;&gt; a &gt;&gt; b;
+		G[a].<span class="hljs-built_in">push_back</span>(b);
+		G[b].<span class="hljs-built_in">push_back</span>(a);
+	&#125;
+	<span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>);
+	cout &lt;&lt; ((dp[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] + dp[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] - dp[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] - <span class="hljs-number">1LL</span> + <span class="hljs-number">100</span> * MOD) % MOD) &lt;&lt; endl;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;
+	vis[u] = <span class="hljs-literal">true</span>;
+	dp[u][<span class="hljs-number">0</span>] = dp[u][<span class="hljs-number">1</span>] = dp[u][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; G[u].<span class="hljs-built_in">size</span>(); i++) &#123;
+		<span class="hljs-keyword">int</span> v = G[u][i];
+		<span class="hljs-keyword">if</span> (vis[v]) <span class="hljs-keyword">continue</span>;
+		<span class="hljs-built_in">dfs</span>(v);
+		dp[u][<span class="hljs-number">0</span>] = (dp[u][<span class="hljs-number">0</span>] * (<span class="hljs-number">2</span> * dp[v][<span class="hljs-number">0</span>] + <span class="hljs-number">2</span> * dp[v][<span class="hljs-number">1</span>] - dp[v][<span class="hljs-number">2</span>]) + <span class="hljs-number">100</span> * MOD) % MOD;
+		dp[u][<span class="hljs-number">1</span>] = (dp[u][<span class="hljs-number">1</span>] * (<span class="hljs-number">2</span> * dp[v][<span class="hljs-number">0</span>] + dp[v][<span class="hljs-number">1</span>] - dp[v][<span class="hljs-number">2</span>]) + <span class="hljs-number">100</span> * MOD) % MOD;
+		dp[u][<span class="hljs-number">2</span>] = (dp[u][<span class="hljs-number">2</span>] * (dp[v][<span class="hljs-number">0</span>] + dp[v][<span class="hljs-number">1</span>] - dp[v][<span class="hljs-number">2</span>]) + <span class="hljs-number">100</span> * MOD) % MOD;
+	&#125;
+&#125;
+</code></pre></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/%E6%A0%91%E5%BD%A2dp/" rel="tag">树形dp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../popcount%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          __builtin_popcount原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="../CF620D2E/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          CF620D2E
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2022 Wilson Xia<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a><br>
+<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">陕ICP备2021014297号</a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="../js/clipboard.min.js"></script>
+<script src="../js/jquery-1.4.3.min.js"></script>
+
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    options: {
+      enableMenu: false
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    }
+  };
+</script>
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    CommonHTML: {
+      linebreaks: false
+    }
+  });
+  </script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="../mathjax/tex-chtml.js">
+</script>
+<!-- <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+
+
+
+  </div>
+</body>
+</html>

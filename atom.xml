@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wilson&#39;s blog</title>
+  
+  
+  <link href="https://wilsonxia.cn/atom.xml" rel="self"/>
+  
+  <link href="https://wilsonxia.cn/"/>
+  <updated>2022-09-12T16:14:40.496Z</updated>
+  <id>https://wilsonxia.cn/</id>
+  
+  <author>
+    <name>Wilson Xia</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>复读大三</title>
+    <link href="https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/"/>
+    <id>https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/</id>
+    <published>2022-09-12T15:41:44.000Z</published>
+    <updated>2022-09-12T16:14:40.496Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;开学的时候&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;我感到很想完成几门早有耳闻的北美CS课程的实验&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>6.824 Lab1 MapReduce</title>
+    <link href="https://wilsonxia.cn/6-824-Lab1-MapReduce/"/>
+    <id>https://wilsonxia.cn/6-824-Lab1-MapReduce/</id>
+    <published>2022-03-19T16:01:19.000Z</published>
+    <updated>2022-03-19T16:37:58.690Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前前后后做了15个小时&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;看到&lt;code&gt;PASSED ALL 30 TESTING</summary>
+        
+      
+    
+    
+    
+    
+    <category term="system" scheme="https://wilsonxia.cn/tags/system/"/>
+    
+    <category term="lab" scheme="https://wilsonxia.cn/tags/lab/"/>
+    
+    <category term="distributed system" scheme="https://wilsonxia.cn/tags/distributed-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF Edu123 题解</title>
+    <link href="https://wilsonxia.cn/CF-Edu123-%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/CF-Edu123-%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-03-07T13:47:25.000Z</published>
+    <updated>2022-03-22T13:23:01.342Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;f-basis&quot;&gt;F. Basis&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://codeforces.com/contest/1644/problem/F&quot;&gt;题面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;考虑一群在操作 2 下可以互相变换的数组&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="斯特林数" scheme="https://wilsonxia.cn/tags/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/"/>
+    
+    <category term="容斥原理" scheme="https://wilsonxia.cn/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Trie树维护集合相交性</title>
+    <link href="https://wilsonxia.cn/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/"/>
+    <id>https://wilsonxia.cn/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/</id>
+    <published>2022-03-03T09:40:59.181Z</published>
+    <updated>2022-03-07T15:03:14.266Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这篇文章讲一个 trick&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;他可以解决如下问题&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char</summary>
+        
+      
+    
+    
+    
+    <category term="奇技淫巧" scheme="https://wilsonxia.cn/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ARC136题解</title>
+    <link href="https://wilsonxia.cn/ARC136%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/ARC136%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-03-01T13:17:35.000Z</published>
+    <updated>2022-03-06T17:20:13.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这场 ARC 比较考验观察能力&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;就是找到切入点的能力&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char</summary>
+        
+      
+    
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARC135题解</title>
+    <link href="https://wilsonxia.cn/ARC135%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/ARC135%E9%A2%98%E8%A7%A3/</id>
+    <published>2022-02-14T14:27:52.000Z</published>
+    <updated>2022-02-15T04:32:24.288Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;F暂时有个地方没搞明白&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;但我会研究题解和正确代码&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char</summary>
+        
+      
+    
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux上使用clash</title>
+    <link href="https://wilsonxia.cn/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/"/>
+    <id>https://wilsonxia.cn/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/</id>
+    <published>2022-01-21T03:31:11.000Z</published>
+    <updated>2022-02-06T18:04:12.952Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;更新&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;我火星了&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://wilsonxia.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>页面调度算法</title>
+    <link href="https://wilsonxia.cn/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    <id>https://wilsonxia.cn/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
+    <published>2022-01-07T04:31:38.000Z</published>
+    <updated>2022-02-06T18:04:25.596Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;最优调度算法为什么最优&quot;&gt;最优调度算法为什么最优&lt;/h2&gt;
+&lt;p&gt;我们发现换页时换入的页总是固定的&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd</summary>
+        
+      
+    
+    
+    
+    <category term="操作系统" scheme="https://wilsonxia.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>二分图匹配</title>
+    <link href="https://wilsonxia.cn/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
+    <id>https://wilsonxia.cn/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/</id>
+    <published>2021-10-30T15:37:16.000Z</published>
+    <updated>2022-01-02T02:15:35.175Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;思路&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;先通过交错路和增广路的概念建立起处理最大匹配的工具&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;证明匹配最大的充要条件是图中没有增广路&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;然后证明Hall定理&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;顺便证明了婚配定理&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;并利用之证明最大匹配与最小点覆盖的对偶性&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;最后证明最小边覆盖与最大独立集的对偶性&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;以及这四者之间的关系&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="图论" scheme="https://wilsonxia.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+    <category term="二分图匹配" scheme="https://wilsonxia.cn/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Public Transport System</title>
+    <link href="https://wilsonxia.cn/Public-Transport-System/"/>
+    <id>https://wilsonxia.cn/Public-Transport-System/</id>
+    <published>2021-10-14T09:36:16.000Z</published>
+    <updated>2021-10-15T03:50:30.820Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题意&quot;&gt;题意&lt;/h2&gt;
+&lt;p&gt;给定一个有向图&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;每条边有边权&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$a_e$&lt;/span&gt;和&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$b_e$&lt;/span&gt;&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$0&amp;lt;a_e,b_e;\;b_e&amp;lt;a_e$&lt;/span&gt;&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;记一条路径由&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$k$&lt;/span&gt;条边&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$e_1,e_2,...,e_k$&lt;/span&gt;组成&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;那么这条路径中&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;边&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$e_1$&lt;/span&gt;的权值为&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$a_{e_1}$&lt;/span&gt;&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$e_i(i&amp;gt;1)$&lt;/span&gt;的权值为&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;markdown-them-math-block&quot;&gt;$$\begin{cases}
+a_{e_i}&amp;amp;a_{e_i}\leq a_{e_{i-1}},\\
+a_{e_{i}}-b_{e_i}&amp;amp;a_{e_i}&amp;gt;a_{e_{i-1}}.
+\end{cases}
+$$&lt;/div&gt;&lt;p&gt;这条路径的权值是这条路径上边的权值之和&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;求从点&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$1$&lt;/span&gt;出发到所有点的最短路长度&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;markdown-them-math-block&quot;&gt;$$\begin{align*}
+n\leq 1\times10^5,\ m\leq 2\times10^5.
+\end{align*}
+$$&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="思维" scheme="https://wilsonxia.cn/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+    <category term="建图" scheme="https://wilsonxia.cn/tags/%E5%BB%BA%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Charged Tree</title>
+    <link href="https://wilsonxia.cn/Charged-Tree/"/>
+    <id>https://wilsonxia.cn/Charged-Tree/</id>
+    <published>2021-09-21T08:17:39.076Z</published>
+    <updated>2021-10-07T12:40:38.384Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;题意&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;给定一棵有根带权树&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;有两种操作下移和上移&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;下移&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;即每个节点将自己的权值均分给各个儿子&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;假设叶子结点有一个无限长的儿子链&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;即叶子结点每次下移都会把自己和整条儿子链下移一位&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;每个节点的新值就是它从父亲得到的那个值&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;他自己原来的值已经分给了儿子&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;特别地&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;一次下移操作后根变成0&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;上移&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;即对每个节点&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;将所有儿子的权值加起来赋给自己&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="思维" scheme="https://wilsonxia.cn/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tarjan算法（求最近公共祖先）</title>
+    <link href="https://wilsonxia.cn/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/"/>
+    <id>https://wilsonxia.cn/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/</id>
+    <published>2021-09-18T09:33:11.008Z</published>
+    <updated>2021-11-28T16:31:24.172Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文讲解用于求解最近公共祖先&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;Least Common Ancestor, LCA&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="最近公共祖先" scheme="https://wilsonxia.cn/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    
+    <category term="并查集" scheme="https://wilsonxia.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PWTC day4补题记录</title>
+    <link href="https://wilsonxia.cn/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>https://wilsonxia.cn/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-08-20T13:51:24.687Z</published>
+    <updated>2021-10-07T12:40:13.290Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;f&quot;&gt;F&lt;/h2&gt;
+&lt;p&gt;题意&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;求树链mex&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>FFT</title>
+    <link href="https://wilsonxia.cn/FFT/"/>
+    <id>https://wilsonxia.cn/FFT/</id>
+    <published>2021-07-18T03:51:49.629Z</published>
+    <updated>2022-03-22T11:54:43.024Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;FFT可以在&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$O(n\log n)$&lt;/span&gt;的时间内在多项式的点值表示法和系数表示法之间相互转换&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;从而可以加速多项式乘法&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="FFT" scheme="https://wilsonxia.cn/tags/FFT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SB树</title>
+    <link href="https://wilsonxia.cn/SB%E6%A0%91/"/>
+    <id>https://wilsonxia.cn/SB%E6%A0%91/</id>
+    <published>2021-06-10T19:11:22.884Z</published>
+    <updated>2021-10-07T12:40:08.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这棵二叉树中包含了所有的非负有理数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;首先看它的构造&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构" scheme="https://wilsonxia.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CF708D2</title>
+    <link href="https://wilsonxia.cn/CF708D2/"/>
+    <id>https://wilsonxia.cn/CF708D2/</id>
+    <published>2021-04-29T03:03:50.328Z</published>
+    <updated>2021-10-07T12:40:43.202Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;d题&quot;&gt;D题&lt;/h2&gt;
+&lt;p&gt;题很好&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;感觉思维得到了升华&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>区间众数</title>
+    <link href="https://wilsonxia.cn/%E5%8C%BA%E9%97%B4%E4%BC%97%E6%95%B0/"/>
+    <id>https://wilsonxia.cn/%E5%8C%BA%E9%97%B4%E4%BC%97%E6%95%B0/</id>
+    <published>2021-04-20T05:20:43.094Z</published>
+    <updated>2021-10-07T12:41:05.609Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;通用求众数离线做法&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;：&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;离散化之后&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>筛选法建堆</title>
+    <link href="https://wilsonxia.cn/%E7%AD%9B%E9%80%89%E6%B3%95%E5%BB%BA%E5%A0%86/"/>
+    <id>https://wilsonxia.cn/%E7%AD%9B%E9%80%89%E6%B3%95%E5%BB%BA%E5%A0%86/</id>
+    <published>2021-02-05T04:07:28.000Z</published>
+    <updated>2021-10-17T15:39:10.261Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这可能是本学期学习数据结构与算法课的最大收获&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;就是知道了还有线性建堆的方法&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;线性建堆可能也是有应用场景的&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;比如用&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$O(n)$&lt;/span&gt;的空间及时间复杂度&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;取出前&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$n/\log n$&lt;/span&gt;大的所有数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;？&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="奇技淫巧" scheme="https://wilsonxia.cn/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
+    
+    
+    <category term="筛选法建堆" scheme="https://wilsonxia.cn/tags/%E7%AD%9B%E9%80%89%E6%B3%95%E5%BB%BA%E5%A0%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICPC2020济南站</title>
+    <link href="https://wilsonxia.cn/ICPC2020%E6%B5%8E%E5%8D%97%E7%AB%99/"/>
+    <id>https://wilsonxia.cn/ICPC2020%E6%B5%8E%E5%8D%97%E7%AB%99/</id>
+    <published>2020-12-27T16:09:10.000Z</published>
+    <updated>2021-10-07T12:40:21.165Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;话说线上赛有啥游记好写的…但是作为惯例还是写一个&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="游记" scheme="https://wilsonxia.cn/categories/%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+    <category term="游记" scheme="https://wilsonxia.cn/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BIT在线求第k大数</title>
+    <link href="https://wilsonxia.cn/BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/"/>
+    <id>https://wilsonxia.cn/BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/</id>
+    <published>2020-07-18T11:43:35.000Z</published>
+    <updated>2021-10-07T12:40:54.633Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在做小学期&lt;a href=&quot;https://oj.skyair.org/contest/47/problem/3&quot;&gt;Day5C题&lt;/a&gt;&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;在线维护中位数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;时&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;由于我没有做过&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;也没有想到正解&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;对顶堆&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;卡了很久&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;最后用一个奇怪的方法做出来了&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;发现这个奇怪的做法复杂度稍高&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;但是可以扩展&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;对顶堆只能维护中位数或固定k的第k大数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;而奇怪做法可以&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;伪&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;？&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;在线查找第k大数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;k可变&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;代价是&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$O(\log^2 n)$&lt;/span&gt;的&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$n$&lt;/span&gt;为数列长度&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Algorithm" scheme="https://wilsonxia.cn/categories/Algorithm/"/>
+    
+    
+    <category term="BIT" scheme="https://wilsonxia.cn/tags/BIT/"/>
+    
+  </entry>
+  
+</feed>
