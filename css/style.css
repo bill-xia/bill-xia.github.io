@@ -640,6 +640,7 @@ a {
   border-bottom: 1px solid #ddd;
   background: rgba(255,255,255,0.732);
   backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 #nav-outer :first-child {
   padding-left: 0;
