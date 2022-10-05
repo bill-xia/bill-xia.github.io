@@ -638,6 +638,8 @@ a {
   background: #fff;
   z-index: 2;
   border-bottom: 1px solid #ddd;
+  background: rgba(255,255,255,0.732);
+  backdrop-filter: saturate(180%) blur(20px);
 }
 #nav-outer :first-child {
   padding-left: 0;
@@ -647,18 +649,6 @@ a {
 }
 #nav-outer :last-child {
   padding-right: 0;
-}
-@supports (backdrop-filter: saturate(180%) blur(20px)) {
-  #nav-outer {
-    background: rgba(255,255,255,0.732);
-    backdrop-filter: saturate(180%) blur(20px);
-  }
-}
-@supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) {
-  #nav-outer {
-    background: rgba(255,255,255,0.732);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-  }
 }
 #main-nav {
   display: -webkit-box;
