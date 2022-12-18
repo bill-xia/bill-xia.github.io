@@ -6,7 +6,7 @@
   <link href="https://wilsonxia.cn/atom.xml" rel="self"/>
   
   <link href="https://wilsonxia.cn/"/>
-  <updated>2022-09-20T03:33:34.666Z</updated>
+  <updated>2022-12-18T03:18:39.025Z</updated>
   <id>https://wilsonxia.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>6.824 Lab2B Raft</title>
+    <link href="https://wilsonxia.cn/6-824-Lab2B-Raft/"/>
+    <id>https://wilsonxia.cn/6-824-Lab2B-Raft/</id>
+    <published>2022-12-18T00:38:59.000Z</published>
+    <updated>2022-12-18T03:18:39.025Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2022.12.18 完成了 Lab2B&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;内容是实现 Raft 的共识算法&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="system" scheme="https://wilsonxia.cn/tags/system/"/>
+    
+    <category term="lab" scheme="https://wilsonxia.cn/tags/lab/"/>
+    
+    <category term="distributed system" scheme="https://wilsonxia.cn/tags/distributed-system/"/>
+    
+  </entry>
+  
+  <entry>
     <title>复读大三</title>
     <link href="https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/"/>
     <id>https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/</id>
     <published>2022-09-12T15:41:44.000Z</published>
-    <updated>2022-09-20T03:33:34.666Z</updated>
+    <updated>2022-12-18T03:17:40.507Z</updated>
     
     
       
@@ -457,25 +484,6 @@ $$&lt;/div&gt;</summary>
     <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
     
     <category term="游记" scheme="https://wilsonxia.cn/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BIT在线求第k大数</title>
-    <link href="https://wilsonxia.cn/BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/"/>
-    <id>https://wilsonxia.cn/BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/</id>
-    <published>2020-07-18T11:43:35.000Z</published>
-    <updated>2021-10-07T12:40:54.633Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在做小学期&lt;a href=&quot;https://oj.skyair.org/contest/47/problem/3&quot;&gt;Day5C题&lt;/a&gt;&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;在线维护中位数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;时&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;由于我没有做过&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;也没有想到正解&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;对顶堆&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;卡了很久&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;最后用一个奇怪的方法做出来了&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;发现这个奇怪的做法复杂度稍高&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;但是可以扩展&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;对顶堆只能维护中位数或固定k的第k大数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;而奇怪做法可以&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-end&quot;&gt;&lt;h-inner&gt;（&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;伪&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;？&lt;/h-inner&gt;&lt;/h-char&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;）&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;在线查找第k大数&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;k可变&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;代价是&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$O(\log^2 n)$&lt;/span&gt;的&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;span class=&quot;markdown-them-math-inline&quot;&gt;$n$&lt;/span&gt;为数列长度&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Algorithm" scheme="https://wilsonxia.cn/categories/Algorithm/"/>
-    
-    
-    <category term="BIT" scheme="https://wilsonxia.cn/tags/BIT/"/>
     
   </entry>
   

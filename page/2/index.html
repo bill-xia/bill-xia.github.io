@@ -48,6 +48,65 @@
       <div id="content" class="outer">
         <section id="main">
   
+    <article id="post-Public-Transport-System" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="../../Public-Transport-System/" class="article-date">
+  <time class="dt-published" datetime="2021-10-14T09:36:16.000Z" itemprop="datePublished">2021-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../../categories/%E9%A2%98%E8%A7%A3/">题解</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="../../Public-Transport-System/">Public Transport System</a>
+    </h1>
+  
+
+      </header>
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="题意">题意</h2>
+<p>给定一个有向图<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>每条边有边权<span class="markdown-them-math-inline">$a_e$</span>和<span class="markdown-them-math-inline">$b_e$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$0&lt;a_e,b_e;\;b_e&lt;a_e$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>记一条路径由<span class="markdown-them-math-inline">$k$</span>条边<span class="markdown-them-math-inline">$e_1,e_2,...,e_k$</span>组成<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>那么这条路径中<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>边<span class="markdown-them-math-inline">$e_1$</span>的权值为<span class="markdown-them-math-inline">$a_{e_1}$</span><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$e_i(i&gt;1)$</span>的权值为<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<div class="markdown-them-math-block">$$\begin{cases}
+a_{e_i}&amp;a_{e_i}\leq a_{e_{i-1}},\\
+a_{e_{i}}-b_{e_i}&amp;a_{e_i}&gt;a_{e_{i-1}}.
+\end{cases}
+$$</div><p>这条路径的权值是这条路径上边的权值之和<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>求从点<span class="markdown-them-math-inline">$1$</span>出发到所有点的最短路长度<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<div class="markdown-them-math-block">$$\begin{align*}
+n\leq 1\times10^5,\ m\leq 2\times10^5.
+\end{align*}
+$$</div>
+        
+          <p class="article-more-link">
+            <a href="../../Public-Transport-System/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/%E5%BB%BA%E5%9B%BE/" rel="tag">建图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Charged-Tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="../../Charged-Tree/" class="article-date">
@@ -679,55 +738,6 @@ vector&lt;<span class="hljs-keyword">int</span>&gt; pos[N+<span class="hljs-numb
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-BIT在线求第k大数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="../../BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2020-07-18T11:43:35.000Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="../../categories/Algorithm/">Algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="../../BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/">BIT在线求第k大数</a>
-    </h1>
-  
-
-      </header>
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在做小学期<a target="_blank" rel="noopener" href="https://oj.skyair.org/contest/47/problem/3">Day5C题</a><span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>在线维护中位数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>时<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>由于我没有做过<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>也没有想到正解<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>对顶堆<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>卡了很久<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>最后用一个奇怪的方法做出来了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>发现这个奇怪的做法复杂度稍高<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但是可以扩展<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>对顶堆只能维护中位数或固定k的第k大数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而奇怪做法可以<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>伪<span class="bd-box"><h-char class="bd bd-beg"><h-inner>？</h-inner></h-char><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>在线查找第k大数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>k可变<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>代价是<span class="markdown-them-math-inline">$O(\log^2 n)$</span>的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span><span class="markdown-them-math-inline">$n$</span>为数列长度<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
-        
-          <p class="article-more-link">
-            <a href="../../BIT%E5%9C%A8%E7%BA%BF%E6%B1%82%E7%AC%ACk%E5%A4%A7%E6%95%B0/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/BIT/" rel="tag">BIT</a></li></ul>
 
     </footer>
   </div>

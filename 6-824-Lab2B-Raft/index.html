@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>6.824 Lab2B Raft | Wilson&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="2022.12.18 完成了 Lab2B，内容是实现 Raft 的共识算法。经过 200 轮测试的检验没有发现问题，我就当作实验完成了。这里记录一下过程中发现的比较有意思的 bug。它们不一定很难修改，很多也都明确地写在 Raft paper 的 Figure 2 中，但是去思考它们为什么会导致错误">
+  
+  
+    <link rel="alternate" href="../atom.xml" title="Wilson's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  
+    <link rel="stylesheet" href="../fancybox/jquery.fancybox-1.3.4.css">
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="nav-outer">
+  <nav id="main-nav" class="outer">
+    <a id="main-nav-toggle" class="nav-icon"></a>
+    
+      <a class="main-nav-link" href="../index.html">Home</a>
+    
+      <a class="main-nav-link" href="../archives">Archives</a>
+    
+      <a class="main-nav-link" href="../about">About</a>
+    
+    <div class="main-nav-space-between"></div>
+    
+      <a id="nav-rss-link" class="nav-icon" href="../atom.xml" title="RSS 订阅"></a>
+    
+  </nav>
+</div>
+<div id="header-title">
+  <h1 id="logo-wrap">
+    <a href="../index.html" id="logo">Wilson&#39;s blog</a>
+  </h1>
+  
+</div>
+
+      <div id="content" class="outer">
+        <section id="main"><article id="post-6-824-Lab2B-Raft" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2022-12-18T00:38:59.000Z" itemprop="datePublished">2022-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      6.824 Lab2B Raft
+    </h1>
+  
+
+      </header>
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2022.12.18 完成了 Lab2B<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>内容是实现 Raft 的共识算法<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>经过 200 轮测试的检验没有发现问题<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>我就当作实验完成了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这里记录一下过程中发现的比较有意思的 bug<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>它们不一定很难修改<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>很多也都明确地写在 Raft paper 的 Figure 2 中<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但是去思考它们为什么会导致错误<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>什么情况会触发这些错误<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>是很有意思的一件事<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>并且能帮助我们更好地理解 Raft 这个系统<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>想到读 paper 时没有想到的问题<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h2 id="livelock">Livelock</h2>
+<p>有时会发生这种情况<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>系统虽然在线<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>但不再做有效的工作<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>连心跳都不发送<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>打印许多日志后发现集群<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>由3台机器组成<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char></span>一直在选举<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而且永远是同一个机器竞选<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而另外两台机器拒绝投票<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为 Candidate 没有通过 up-to-date 检查<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>Raft paper 5.4.1<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这个 bug 错在 RequestVote RPC 的接收方不加判断地更新重新选举定时器<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>正确地做法是仅在投票时更新定时器<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>拒绝投票时不更新定时器<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>来保证自己可以正确地超时<span class="bd-box"><h-char class="bd bd-beg"><h-inner>、</h-inner></h-char></span>启动竞选<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>在这里<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>Candidate 没有通过任何 Follower 的 up-to-date 检查<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>说明它无法竞选成功<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>要使系统继续工作<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>需要另外两台机器之一超时启动竞选<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>类似地<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>AppendEntry RPC 应当在 RPC term 没有过期时更新定时器<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>注意这不要求 RPC 成功<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为 RPC 可能因为 log 不一致而失败<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这时 Leader 会自减 <code>nextIndex[]</code> 并重试<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这仍然构成一个 Heartbeat<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>应当更新定时器<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h2 id="错误地认为-log 冲突导致不必要的删除">错误地认为 log 冲突导致不必要的删除</h2>
+<p>在 Raft Paper Figure 2 中<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>AppendEntry Step 3是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<blockquote>
+<p>If an existing entry conflicts with a new one (same index but different terms), delete the existing entry and all that follow it.</p>
+</blockquote>
+<p>我曾经在比较 term 时出错<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>用 existing entry 的 term 与 AppendEntry 的 term 比较了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>正确的做法与 AppendEntry 中新的 Log Entry 的 term 进行比较<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这可能会导致不必要的删除日志<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为传输的新 Log Entry 不一定是当前 term 的内容<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>也可能是之前 term 的内容<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>这会导致问题的场景是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>如果 AppendEntry 在网络中经历了较高的延迟<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>RPC 可能已经过期<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>正确做法下两条 log 不会冲突<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以不会删除<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而这个错误会导致删除这条以及其后所有的 log<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而我们很可能之前已经告诉了 Leader 我们拥有那条 log<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>如果集群中拥有这条 log 的机器数刚好过半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>Leader commit 并应用到状态机上<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这时我们删除了这条 log<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>拥有 log 的机器数就不再过半<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>如果此时 Leader 再离开集群<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>重新选举的 Leader 就不一定包含这条 log 了<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>正常情况下<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>新Leader 包含这条 log 这件事由 5.4.1 的 up-to-date check 保证<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>也就是 committed log 被回滚了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>助教的这篇<a target="_blank" rel="noopener" href="https://thesquareplanet.com/blog/students-guide-to-raft/#the-importance-of-details">博文</a>也提到了这一问题<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>这个 bug 是我阅读代码发现的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这可能并不好测试<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>根据我的理解<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>6.824 的测试用例并没有模拟乱序的网络通信<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h2 id="commitindex-的激进更新导致某些机器做出错误 commit">CommitIndex 的激进更新导致某些机器做出错误 commit</h2>
+<p>问题在于<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>TestBackup2B 会有很小的概率失败<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>原因是某台机器作出的 commit 和其他机器已经作出的不一致<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这个问题困扰了我很久<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>直到我离开电脑准备睡觉时才想到这个问题可能的原因<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>在 Raft Paper Figure 2 中<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>AppendEntry Step 5 是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span></p>
+<blockquote>
+<p>If leaderCommit &gt; commitIndex, set commitIndex = min(leaderCommit, index of last <strong>new</strong> entry).</p>
+</blockquote>
+<p>这个 <strong>new</strong> 很重要<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>我的错误在于直接用 log 长度更新 commitIndex<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>正确的做法是用 AppendEntry RPC 中携带的最新 Entry 的下标来更新 commitIndex<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这会导致 commitIndex 的更新过于激进<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>后面的尚未确认与 Leader 同步的 log 也会被 commit<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这看起来应该经常出错<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>为什么在 TestBackup2B 中很少出现呢<span class="bd-box"><h-char class="bd bd-beg"><h-inner>？</h-inner></h-char></span>因为带有错误 log 的机器在连接到正确集群时<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>Leader 会不断地自减 <code>nextIndex[]</code> 并重试 AppendEntry RPC<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>直到在某处 Log 吻合<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>这时该 Leader 会第一次更新该 Follower 的 commitIndex<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>commitIndex 首次被更新时 AppendEntry RPC 通常携带新的 Entry<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而这个 Entry 和 RPC 接收方的 log 是冲突的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以 log 都在步骤 3 中被清空了<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>于是步骤 5 中 index of last new entry 也就是 log 的长度<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>那什么时候才会触发这个错误呢<span class="bd-box"><h-char class="bd bd-beg"><h-inner>？</h-inner></h-char></span>答案是 commitIndex 首次被更新时接收到的是心跳<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>不带 Entry 的 AppendEntry RPC<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>它不会清空后面的错误的 log<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而且还会更新 commitIndex<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这就要求心跳刚好在 <code>nextIndex[]</code> 减少到正确值的时候发送<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>所以出现的概率很低<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<p>要定位这个 bug 还是很困难的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>因为这个问题出现的概率真的很低<span class="bd-box"><h-char class="bd bd-end"><h-inner>（</h-inner></h-char></span>跑50次出1次问题左右<span class="bd-box"><h-char class="bd bd-beg"><h-inner>）</h-inner></h-char><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>每跑一次都需要等很久<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>而且每次 commit 都打印一条信息导致输出很长<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>推荐一篇文章<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span><a target="_blank" rel="noopener" href="https://blog.josejg.com/debugging-pretty/">Debugging by Pretty Printing</a><span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>是 6.824 的一名助教写的<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>帮助我们更好地用日志调试分布式系统<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+<h2 id="committing-entries from previous terms">Committing entries from previous terms</h2>
+<p>我在 Leader 上的 CommitIndex 更新采用的方法是<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>找 <code>matchIndex[]</code> 中第 <code>n/2+1</code> 大的数<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>这时要注意<span class="bd-box"><h-char class="bd bd-beg"><h-inner>：</h-inner></h-char></span>这条 log 还需要属于当前 term<span class="bd-box"><h-char class="bd bd-beg"><h-inner>，</h-inner></h-char></span>否则无法宣布 commit<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>也就是不能 commit 之前 term 的日志<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span>原因在 Raft paper 的 5.4.2 节和 Figure 8 中有详细说明<span class="bd-box"><h-char class="bd bd-beg"><h-inner>。</h-inner></h-char></span></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/distributed-system/" rel="tag">distributed system</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/lab/" rel="tag">lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/system/" rel="tag">system</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          复读大三
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2022 Wilson Xia<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a><br>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="../about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="../js/clipboard.min.js"></script>
+<script src="../js/jquery-1.4.3.min.js"></script>
+
+<script src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+
+
+
+<script>
+  MathJax = {
+    options: {
+      enableMenu: false
+    },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    }
+  };
+</script>
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    CommonHTML: {
+      linebreaks: false
+    }
+  });
+  </script> -->
+<script type="text/javascript" id="MathJax-script" async
+  src="../mathjax/tex-chtml.js">
+</script>
+<!-- <script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML">
+</script> -->
+
+
+
+  </div>
+</body>
+</html>
