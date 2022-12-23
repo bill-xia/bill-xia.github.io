@@ -447,51 +447,7 @@ button::-moz-focus-inner {
   src: url("fonts/lmroman10-bolditalic.ttf");
 }
 @font-face {
-  font-family: Chinese;
-  font-style: normal;
-  font-weight: normal;
-  src: url("fonts/HYShuSongErS.ttf");
-}
-@font-face {
-  font-family: Chinese;
-  font-style: normal;
-  font-weight: bold;
-  src: url("fonts/FZHTJW.ttf");
-}
-@font-face {
-  font-family: Chinese;
-  font-style: italic;
-  font-weight: normal;
-  src: url("fonts/FZKTJW.ttf");
-}
-@font-face {
-  font-family: ChineseMono;
-  font-style: normal;
-  font-weight: normal;
-  src: url("fonts/HYFangSongJ.ttf");
-}
-@font-face {
   font-family: biaodian;
-  font-style: normal;
-  font-weight: normal;
-  src: url("fonts/biaodian.ttf");
-}
-@font-face {
-  font-family: biaodian;
-  font-style: italic;
-  font-weight: normal;
-  src: url("fonts/biaodian.ttf");
-}
-@font-face {
-  font-family: biaodian;
-  font-style: normal;
-  font-weight: bold;
-  src: url("fonts/biaodian.ttf");
-}
-@font-face {
-  font-family: biaodian;
-  font-style: italic;
-  font-weight: bold;
   src: url("fonts/biaodian.ttf");
 }
 html {
@@ -635,12 +591,11 @@ a {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: rgba(255,255,255,0.732);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   z-index: 2;
   border-bottom: 1px solid #ddd;
-  background: rgba(255,255,255,0.732);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 #nav-outer :first-child {
   padding-left: 0;
@@ -838,8 +793,17 @@ a.article-title:hover {
   color: #999;
 }
 .article-entry {
-  text-align: justify;
   color: #222;
+}
+@media screen {
+  .article-entry {
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 600px) {
+  .article-entry {
+    text-align: start;
+  }
 }
 .article-entry:before,
 .article-entry:after {
@@ -849,9 +813,8 @@ a.article-title:hover {
 .article-entry:after {
   clear: both;
 }
-.article-entry .markdown-them-math-inline:before,
-.article-entry .markdown-them-math-inline:after {
-  content: " ";
+.article-entry .markdown-them-math-inline {
+  margin: 0.25em;
 }
 .article-entry p,
 .article-entry table {
@@ -918,9 +881,6 @@ a.article-title:hover {
   font-style: italic;
   margin: 1.6em 0;
   padding: 0px 2em;
-}
-.article-entry blockquote strong {
-  font-style: normal;
 }
 .article-entry blockquote footer {
   font-size: 16px;
@@ -1440,6 +1400,7 @@ a.article-title:hover {
 .article-entry code {
   background: #fff;
   text-shadow: 0 1px #fff;
+  padding: 0 0.3em;
 }
 .article-entry pre {
   padding: 15px;
