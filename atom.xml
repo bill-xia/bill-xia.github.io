@@ -6,7 +6,7 @@
   <link href="https://wilsonxia.cn/atom.xml" rel="self"/>
   
   <link href="https://wilsonxia.cn/"/>
-  <updated>2022-12-18T03:18:39.025Z</updated>
+  <updated>2023-08-02T09:24:25.754Z</updated>
   <id>https://wilsonxia.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些经典的系统idea</title>
+    <link href="https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/"/>
+    <id>https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/</id>
+    <published>2023-08-02T07:32:37.000Z</published>
+    <updated>2023-08-02T09:24:25.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;类似于 CS61C 提出的体系结构经典 idea&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;我也想在这里总结一下我在学习/读论文过程中看到的可复用的</summary>
+        
+      
+    
+    
+    
+    <category term="research" scheme="https://wilsonxia.cn/categories/research/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>6.824 Lab2B Raft</title>
@@ -463,27 +486,6 @@ $$&lt;/div&gt;</summary>
     
     
     <category term="筛选法建堆" scheme="https://wilsonxia.cn/tags/%E7%AD%9B%E9%80%89%E6%B3%95%E5%BB%BA%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ICPC2020济南站</title>
-    <link href="https://wilsonxia.cn/ICPC2020%E6%B5%8E%E5%8D%97%E7%AB%99/"/>
-    <id>https://wilsonxia.cn/ICPC2020%E6%B5%8E%E5%8D%97%E7%AB%99/</id>
-    <published>2020-12-27T16:09:10.000Z</published>
-    <updated>2021-10-07T12:40:21.165Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;话说线上赛有啥游记好写的…但是作为惯例还是写一个&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="游记" scheme="https://wilsonxia.cn/categories/%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
-    
-    <category term="游记" scheme="https://wilsonxia.cn/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
