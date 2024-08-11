@@ -6,7 +6,7 @@
   <link href="https://wilsonxia.cn/atom.xml" rel="self"/>
   
   <link href="https://wilsonxia.cn/"/>
-  <updated>2023-08-02T09:24:25.754Z</updated>
+  <updated>2024-08-11T07:55:33.698Z</updated>
   <id>https://wilsonxia.cn/</id>
   
   <author>
@@ -21,16 +21,10 @@
     <link href="https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/"/>
     <id>https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/</id>
     <published>2023-08-02T07:32:37.000Z</published>
-    <updated>2023-08-02T09:24:25.754Z</updated>
+    <updated>2024-08-11T07:55:33.698Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;类似于 CS61C 提出的体系结构经典 idea&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;我也想在这里总结一下我在学习/读论文过程中看到的可复用的</summary>
-        
-      
+    <summary type="html">&lt;p&gt;类似于 CS61C 提出的体系结构经典 idea&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;我也想在这里总结一下我在学习/读论文过程中看到的可复用的 idea&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;很多文章就是对这些 idea 进行排列组合&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;用于实现 tradeoff 的一部分&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;，&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;实现整体的性能目标&lt;span class=&quot;bd-box&quot;&gt;&lt;h-char class=&quot;bd bd-beg&quot;&gt;&lt;h-inner&gt;。&lt;/h-inner&gt;&lt;/h-char&gt;&lt;/span&gt;&lt;/p&gt;</summary>
     
     
     
