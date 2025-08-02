@@ -3,11 +3,11 @@
   <title>Wilson&#39;s blog</title>
   
   
-  <link href="https://wilsonxia.cn/blog/atom.xml" rel="self"/>
+  <link href="https://wilsonxia.cn/atom.xml" rel="self"/>
   
-  <link href="https://wilsonxia.cn/blog/"/>
+  <link href="https://wilsonxia.cn/"/>
   <updated>2025-08-02T13:51:41.063Z</updated>
-  <id>https://wilsonxia.cn/blog/</id>
+  <id>https://wilsonxia.cn/</id>
   
   <author>
     <name>Wilson Xia</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Dashboard site with Hexo and Vega-Lite</title>
-    <link href="https://wilsonxia.cn/blog/Static-dashboard-site-with-Hexo-and-Vega-Lite/"/>
-    <id>https://wilsonxia.cn/blog/Static-dashboard-site-with-Hexo-and-Vega-Lite/</id>
+    <link href="https://wilsonxia.cn/Static-dashboard-site-with-Hexo-and-Vega-Lite/"/>
+    <id>https://wilsonxia.cn/Static-dashboard-site-with-Hexo-and-Vega-Lite/</id>
     <published>2025-08-02T12:56:12.000Z</published>
     <updated>2025-08-02T13:51:41.063Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Profiling with Perf</title>
-    <link href="https://wilsonxia.cn/blog/Profiling/"/>
-    <id>https://wilsonxia.cn/blog/Profiling/</id>
+    <link href="https://wilsonxia.cn/Profiling/"/>
+    <id>https://wilsonxia.cn/Profiling/</id>
     <published>2024-07-06T07:21:39.000Z</published>
     <updated>2025-06-01T14:09:37.523Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>一些经典的系统idea</title>
-    <link href="https://wilsonxia.cn/blog/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/"/>
-    <id>https://wilsonxia.cn/blog/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/</id>
+    <link href="https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/"/>
+    <id>https://wilsonxia.cn/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E7%B3%BB%E7%BB%9Fidea/</id>
     <published>2023-08-02T07:32:37.000Z</published>
     <updated>2024-08-11T07:55:33.698Z</updated>
     
@@ -70,15 +70,15 @@
     
     
     
-    <category term="research" scheme="https://wilsonxia.cn/blog/categories/research/"/>
+    <category term="research" scheme="https://wilsonxia.cn/categories/research/"/>
     
     
   </entry>
   
   <entry>
     <title>6.824 Lab2B Raft</title>
-    <link href="https://wilsonxia.cn/blog/6-824-Lab2B-Raft/"/>
-    <id>https://wilsonxia.cn/blog/6-824-Lab2B-Raft/</id>
+    <link href="https://wilsonxia.cn/6-824-Lab2B-Raft/"/>
+    <id>https://wilsonxia.cn/6-824-Lab2B-Raft/</id>
     <published>2022-12-18T00:38:59.000Z</published>
     <updated>2022-12-18T03:18:39.025Z</updated>
     
@@ -94,18 +94,18 @@
     
     
     
-    <category term="system" scheme="https://wilsonxia.cn/blog/tags/system/"/>
+    <category term="system" scheme="https://wilsonxia.cn/tags/system/"/>
     
-    <category term="lab" scheme="https://wilsonxia.cn/blog/tags/lab/"/>
+    <category term="lab" scheme="https://wilsonxia.cn/tags/lab/"/>
     
-    <category term="distributed system" scheme="https://wilsonxia.cn/blog/tags/distributed-system/"/>
+    <category term="distributed system" scheme="https://wilsonxia.cn/tags/distributed-system/"/>
     
   </entry>
   
   <entry>
     <title>复读大三</title>
-    <link href="https://wilsonxia.cn/blog/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/"/>
-    <id>https://wilsonxia.cn/blog/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/</id>
+    <link href="https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/"/>
+    <id>https://wilsonxia.cn/%E5%A4%8D%E8%AF%BB%E5%A4%A7%E4%B8%89/</id>
     <published>2022-09-12T15:41:44.000Z</published>
     <updated>2022-12-18T03:17:40.507Z</updated>
     
@@ -125,8 +125,8 @@
   
   <entry>
     <title>6.824 Lab1 MapReduce</title>
-    <link href="https://wilsonxia.cn/blog/6-824-Lab1-MapReduce/"/>
-    <id>https://wilsonxia.cn/blog/6-824-Lab1-MapReduce/</id>
+    <link href="https://wilsonxia.cn/6-824-Lab1-MapReduce/"/>
+    <id>https://wilsonxia.cn/6-824-Lab1-MapReduce/</id>
     <published>2022-03-19T16:01:19.000Z</published>
     <updated>2022-03-19T16:37:58.690Z</updated>
     
@@ -142,18 +142,18 @@
     
     
     
-    <category term="system" scheme="https://wilsonxia.cn/blog/tags/system/"/>
+    <category term="system" scheme="https://wilsonxia.cn/tags/system/"/>
     
-    <category term="lab" scheme="https://wilsonxia.cn/blog/tags/lab/"/>
+    <category term="lab" scheme="https://wilsonxia.cn/tags/lab/"/>
     
-    <category term="distributed system" scheme="https://wilsonxia.cn/blog/tags/distributed-system/"/>
+    <category term="distributed system" scheme="https://wilsonxia.cn/tags/distributed-system/"/>
     
   </entry>
   
   <entry>
     <title>CF Edu123 题解</title>
-    <link href="https://wilsonxia.cn/blog/CF-Edu123-%E9%A2%98%E8%A7%A3/"/>
-    <id>https://wilsonxia.cn/blog/CF-Edu123-%E9%A2%98%E8%A7%A3/</id>
+    <link href="https://wilsonxia.cn/CF-Edu123-%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/CF-Edu123-%E9%A2%98%E8%A7%A3/</id>
     <published>2022-03-07T13:47:25.000Z</published>
     <updated>2022-03-22T13:23:01.342Z</updated>
     
@@ -170,19 +170,19 @@
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="斯特林数" scheme="https://wilsonxia.cn/blog/tags/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/"/>
+    <category term="斯特林数" scheme="https://wilsonxia.cn/tags/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/"/>
     
-    <category term="容斥原理" scheme="https://wilsonxia.cn/blog/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    <category term="容斥原理" scheme="https://wilsonxia.cn/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>Trie树维护集合相交性</title>
-    <link href="https://wilsonxia.cn/blog/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/"/>
-    <id>https://wilsonxia.cn/blog/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/</id>
+    <link href="https://wilsonxia.cn/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/"/>
+    <id>https://wilsonxia.cn/Trie%E6%A0%91%E7%BB%B4%E6%8A%A4%E9%9B%86%E5%90%88%E7%9B%B8%E4%BA%A4%E6%80%A7/</id>
     <published>2022-03-03T09:40:59.181Z</published>
     <updated>2022-03-07T15:03:14.266Z</updated>
     
@@ -197,15 +197,15 @@
     
     
     
-    <category term="奇技淫巧" scheme="https://wilsonxia.cn/blog/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
+    <category term="奇技淫巧" scheme="https://wilsonxia.cn/categories/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>ARC136题解</title>
-    <link href="https://wilsonxia.cn/blog/ARC136%E9%A2%98%E8%A7%A3/"/>
-    <id>https://wilsonxia.cn/blog/ARC136%E9%A2%98%E8%A7%A3/</id>
+    <link href="https://wilsonxia.cn/ARC136%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/ARC136%E9%A2%98%E8%A7%A3/</id>
     <published>2022-03-01T13:17:35.000Z</published>
     <updated>2022-03-06T17:20:13.857Z</updated>
     
@@ -221,14 +221,14 @@
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>ARC135题解</title>
-    <link href="https://wilsonxia.cn/blog/ARC135%E9%A2%98%E8%A7%A3/"/>
-    <id>https://wilsonxia.cn/blog/ARC135%E9%A2%98%E8%A7%A3/</id>
+    <link href="https://wilsonxia.cn/ARC135%E9%A2%98%E8%A7%A3/"/>
+    <id>https://wilsonxia.cn/ARC135%E9%A2%98%E8%A7%A3/</id>
     <published>2022-02-14T14:27:52.000Z</published>
     <updated>2022-02-15T04:32:24.288Z</updated>
     
@@ -244,14 +244,14 @@
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/tags/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>在Linux上使用clash</title>
-    <link href="https://wilsonxia.cn/blog/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/"/>
-    <id>https://wilsonxia.cn/blog/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/</id>
+    <link href="https://wilsonxia.cn/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/"/>
+    <id>https://wilsonxia.cn/%E5%9C%A8Linux%E4%B8%8A%E4%BD%BF%E7%94%A8clash/</id>
     <published>2022-01-21T03:31:11.000Z</published>
     <updated>2022-02-06T18:04:12.952Z</updated>
     
@@ -266,15 +266,15 @@
     
     
     
-    <category term="工具" scheme="https://wilsonxia.cn/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://wilsonxia.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
   
   <entry>
     <title>页面调度算法</title>
-    <link href="https://wilsonxia.cn/blog/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
-    <id>https://wilsonxia.cn/blog/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
+    <link href="https://wilsonxia.cn/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    <id>https://wilsonxia.cn/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
     <published>2022-01-07T04:31:38.000Z</published>
     <updated>2022-02-06T18:04:25.596Z</updated>
     
@@ -290,15 +290,15 @@
     
     
     
-    <category term="操作系统" scheme="https://wilsonxia.cn/blog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://wilsonxia.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
   </entry>
   
   <entry>
     <title>二分图匹配</title>
-    <link href="https://wilsonxia.cn/blog/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
-    <id>https://wilsonxia.cn/blog/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/</id>
+    <link href="https://wilsonxia.cn/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
+    <id>https://wilsonxia.cn/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/</id>
     <published>2021-10-30T15:37:16.000Z</published>
     <updated>2022-01-02T02:15:35.175Z</updated>
     
@@ -307,19 +307,19 @@
     
     
     
-    <category term="算法" scheme="https://wilsonxia.cn/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="图论" scheme="https://wilsonxia.cn/blog/tags/%E5%9B%BE%E8%AE%BA/"/>
+    <category term="图论" scheme="https://wilsonxia.cn/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-    <category term="二分图匹配" scheme="https://wilsonxia.cn/blog/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
+    <category term="二分图匹配" scheme="https://wilsonxia.cn/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/"/>
     
   </entry>
   
   <entry>
     <title>Public Transport System</title>
-    <link href="https://wilsonxia.cn/blog/Public-Transport-System/"/>
-    <id>https://wilsonxia.cn/blog/Public-Transport-System/</id>
+    <link href="https://wilsonxia.cn/Public-Transport-System/"/>
+    <id>https://wilsonxia.cn/Public-Transport-System/</id>
     <published>2021-10-14T09:36:16.000Z</published>
     <updated>2021-10-15T03:50:30.820Z</updated>
     
@@ -338,19 +338,19 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="思维" scheme="https://wilsonxia.cn/blog/tags/%E6%80%9D%E7%BB%B4/"/>
+    <category term="思维" scheme="https://wilsonxia.cn/tags/%E6%80%9D%E7%BB%B4/"/>
     
-    <category term="建图" scheme="https://wilsonxia.cn/blog/tags/%E5%BB%BA%E5%9B%BE/"/>
+    <category term="建图" scheme="https://wilsonxia.cn/tags/%E5%BB%BA%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title>Charged Tree</title>
-    <link href="https://wilsonxia.cn/blog/Charged-Tree/"/>
-    <id>https://wilsonxia.cn/blog/Charged-Tree/</id>
+    <link href="https://wilsonxia.cn/Charged-Tree/"/>
+    <id>https://wilsonxia.cn/Charged-Tree/</id>
     <published>2021-09-21T08:17:39.076Z</published>
     <updated>2021-10-07T12:40:38.384Z</updated>
     
@@ -359,17 +359,17 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="思维" scheme="https://wilsonxia.cn/blog/tags/%E6%80%9D%E7%BB%B4/"/>
+    <category term="思维" scheme="https://wilsonxia.cn/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
   <entry>
     <title>tarjan算法（求最近公共祖先）</title>
-    <link href="https://wilsonxia.cn/blog/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/"/>
-    <id>https://wilsonxia.cn/blog/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/</id>
+    <link href="https://wilsonxia.cn/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/"/>
+    <id>https://wilsonxia.cn/tarjan%E7%AE%97%E6%B3%95%EF%BC%88%E6%B1%82%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%89/</id>
     <published>2021-09-18T09:33:11.008Z</published>
     <updated>2021-11-28T16:31:24.172Z</updated>
     
@@ -384,19 +384,19 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="算法" scheme="https://wilsonxia.cn/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="最近公共祖先" scheme="https://wilsonxia.cn/blog/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <category term="最近公共祖先" scheme="https://wilsonxia.cn/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
-    <category term="并查集" scheme="https://wilsonxia.cn/blog/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    <category term="并查集" scheme="https://wilsonxia.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
   <entry>
     <title>PWTC day4补题记录</title>
-    <link href="https://wilsonxia.cn/blog/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    <id>https://wilsonxia.cn/blog/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
+    <link href="https://wilsonxia.cn/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>https://wilsonxia.cn/PWTC%20day4%E8%A1%A5%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
     <published>2021-08-20T13:51:24.687Z</published>
     <updated>2021-10-07T12:40:13.290Z</updated>
     
@@ -412,15 +412,15 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
   </entry>
   
   <entry>
     <title>FFT</title>
-    <link href="https://wilsonxia.cn/blog/FFT/"/>
-    <id>https://wilsonxia.cn/blog/FFT/</id>
+    <link href="https://wilsonxia.cn/FFT/"/>
+    <id>https://wilsonxia.cn/FFT/</id>
     <published>2021-07-18T03:51:49.629Z</published>
     <updated>2022-03-22T11:54:43.024Z</updated>
     
@@ -429,17 +429,17 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="算法" scheme="https://wilsonxia.cn/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://wilsonxia.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="FFT" scheme="https://wilsonxia.cn/blog/tags/FFT/"/>
+    <category term="FFT" scheme="https://wilsonxia.cn/tags/FFT/"/>
     
   </entry>
   
   <entry>
     <title>SB树</title>
-    <link href="https://wilsonxia.cn/blog/SB%E6%A0%91/"/>
-    <id>https://wilsonxia.cn/blog/SB%E6%A0%91/</id>
+    <link href="https://wilsonxia.cn/SB%E6%A0%91/"/>
+    <id>https://wilsonxia.cn/SB%E6%A0%91/</id>
     <published>2021-06-10T19:11:22.884Z</published>
     <updated>2021-10-07T12:40:08.427Z</updated>
     
@@ -454,15 +454,15 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="数据结构" scheme="https://wilsonxia.cn/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://wilsonxia.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
   </entry>
   
   <entry>
     <title>CF708D2</title>
-    <link href="https://wilsonxia.cn/blog/CF708D2/"/>
-    <id>https://wilsonxia.cn/blog/CF708D2/</id>
+    <link href="https://wilsonxia.cn/CF708D2/"/>
+    <id>https://wilsonxia.cn/CF708D2/</id>
     <published>2021-04-29T03:03:50.328Z</published>
     <updated>2021-10-07T12:40:43.202Z</updated>
     
@@ -478,7 +478,7 @@ $$&lt;/div&gt;</summary>
     
     
     
-    <category term="题解" scheme="https://wilsonxia.cn/blog/categories/%E9%A2%98%E8%A7%A3/"/>
+    <category term="题解" scheme="https://wilsonxia.cn/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
   </entry>
